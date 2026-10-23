@@ -39,7 +39,7 @@ A self-contained release package is available for 64-bit Windows systems. It inc
 
 ### Installation & Launch Instructions
 
-1. Download `billiards-windows-x64.zip` from the project's [GitHub Releases](https://github.com/Ayu5h-2005/Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence/releases) or build it locally using `package_release.ps1`.
+1. Download `billiards-windows-x64.zip` from the project's [GitHub Releases](https://github.com/Ayu5h-2005/Rigid-Body-Dynamics/releases) or build it locally using `package_release.ps1`.
 2. Extract the ZIP archive to a folder on your Windows PC.
 3. Launch the game by double-clicking:
    - `billiards.exe` directly, or
@@ -148,7 +148,7 @@ With 9 balls on the table, this requires 36 distance checks per physics step reg
 ## Credits & Acknowledgements
 
 - **Author**: Ayush Thakare ([@Ayu5h-2005](https://github.com/Ayu5h-2005)), Pimpri Chinchwad College of Engineering (PCCOE Pune).
-- **Repository**: [Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence](https://github.com/Ayu5h-2005/Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence)
+- **Repository**: [Rigid-Body-Dynamics](https://github.com/Ayu5h-2005/Rigid-Body-Dynamics)
 - **Library**: [SFML (Simple and Fast Multimedia Library)](https://www.sfml-dev.org/) version 3.
 
 2D Billiards — Rigid Body Dynamics
