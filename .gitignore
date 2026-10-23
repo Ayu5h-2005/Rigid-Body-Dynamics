@@ -1,0 +1,16 @@
+# Build artifacts
+*.o
+*.obj
+*.pdb
+build/
+bin/
+
+# Packaged release binaries (host as GitHub Releases asset)
+/release/
+
+# Node / Web dependencies
+node_modules/
+dist/
+.vite/
+.env.local
+.env.*.local
