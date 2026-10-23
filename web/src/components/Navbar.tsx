@@ -30,12 +30,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, downloadUrl }) 
 
           {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-6 text-sm text-slate-300">
+            <a href="#game" className="text-emerald-400 font-semibold hover:text-emerald-300 transition-colors flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              Play Game
+            </a>
             <a href="#about" className="hover:text-emerald-400 transition-colors">About</a>
             <a href="#controls" className="hover:text-emerald-400 transition-colors">Controls</a>
             <a href="#comparison" className="hover:text-emerald-400 transition-colors">Algorithm Comparison</a>
             <a href="#performance" className="hover:text-emerald-400 transition-colors">Research & Metrics</a>
             <a href="#install" className="hover:text-emerald-400 transition-colors">Installation</a>
-            <a href="#stack" className="hover:text-emerald-400 transition-colors">Tech Stack</a>
           </nav>
 
           {/* Action CTAs */}
@@ -86,6 +89,13 @@ export const Navbar: React.FC<NavbarProps> = ({ onDownloadClick, downloadUrl }) 
       {/* Mobile menu dropdown */}
       {mobileMenuOpen && (
         <div className="md:hidden border-b border-slate-800 bg-slatebg-900/95 px-4 pt-2 pb-6 space-y-3">
+          <a
+            href="#game"
+            onClick={() => setMobileMenuOpen(false)}
+            className="block text-emerald-400 font-bold py-1"
+          >
+            Play Online Now
+          </a>
           <a
             href="#about"
             onClick={() => setMobileMenuOpen(false)}

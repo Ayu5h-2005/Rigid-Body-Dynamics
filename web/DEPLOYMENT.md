@@ -1,64 +1,66 @@
-# Vercel Deployment Guide for 2D Billiards Website
+# Deploying 2D Billiards to Vercel (Play Directly in Browser)
 
-This guide walks through deploying the web portal located in the `web/` directory to **Vercel** independently of the C++ desktop simulation.
+The web application in `web/` contains the full **2D Billiards Rigid Body Dynamics Simulation & Collision Research Engine** running directly in the browser via HTML5 Canvas, React, and TypeScript. 
+
+Deploying this to Vercel enables **anyone on any device** (desktop, laptop, tablet, mobile) to play the game instantly in their browser without downloading or installing anything.
 
 ---
 
-## 1. Quick Setup Overview
+## 1. Quick Deployment Settings
 
 | Setting | Value |
 | :--- | :--- |
 | **Framework Preset** | Vite |
-| **Root Directory** | `web` |
+| **Root Directory** | **`web`** *(Crucial: must select the `web` folder)* |
 | **Build Command** | `npm run build` |
 | **Output Directory** | `dist` |
 | **Install Command** | `npm install` |
-| **Node.js Version** | 18.x or 20.x or 22.x |
 
 ---
 
 ## 2. Step-by-Step Vercel Deployment
 
-1. **Sign in to Vercel**:
+1. **Log in to Vercel**:
    Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
 
-2. **Import Repository**:
+2. **Add New Project**:
    - Click **Add New...** -> **Project**.
-   - Search for `Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence`.
+   - Select your repository: `Ayu5h-2005/Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence`.
    - Click **Import**.
 
-3. **Configure the Project**:
-   - **Project Name**: `billiards-rigid-body-dynamics` (or preferred name).
-   - **Framework Preset**: Vercel automatically detects `Vite`.
-   - **Root Directory**: **CRITICAL STEP**: Click **Edit** next to Root Directory, select the `web` folder, and click **Continue**.
-   - **Build and Output Settings**: Leave as default (`npm run build` and `dist`).
+3. **Configure Root Directory**:
+   - Next to **Root Directory**, click **Edit**.
+   - Select the **`web`** directory and click **Continue**.
 
-4. **Set Environment Variables**:
-   Under **Environment Variables**, optionally add:
-   - **Name**: `VITE_GAME_DOWNLOAD_URL`
-   - **Value**: Direct URL to your hosted Windows release ZIP (e.g. `https://github.com/Ayu5h-2005/Rigid-body-dynamics-impulse-based-solvers-contact-island-identification-and-temporal-coherence/releases/download/v1.0.0/billiards-windows-x64.zip`).
-   - *Note*: If omitted, the website automatically falls back to the release guidance modal with links to GitHub Releases and local packaging instructions.
-
-5. **Deploy**:
-   Click **Deploy**. Vercel will build and deploy the site in under 60 seconds, provisioning an SSL-enabled `.vercel.app` domain.
+4. **Deploy**:
+   - Click **Deploy**.
+   - Vercel will install dependencies, compile the TypeScript game engine, and deploy the playable simulation to a live `*.vercel.app` domain in ~30 seconds.
 
 ---
 
-## 3. How Future Commits Update the Website
+## 3. Web Gameplay Features
 
-- Vercel monitors the `main` branch via GitHub webhooks.
-- Whenever a new commit touches files in the `web/` directory, Vercel initiates an automated zero-downtime deployment.
-- Commits that only touch C++ files (e.g., `main.cpp`) will trigger a build only if root directory cache is updated, keeping deployment isolated.
+- **Direct In-Browser Play**: Click on table to aim cue stick and shoot cue ball.
+- **Algorithm Toggling Live**: Press **B** or click the button to switch between **Baseline (All-Pairs)** and **Proposed (Spatial Grid)** algorithms with real-time collision check telemetry.
+- **Research Overlays**: Press **R** to visualize the collision normal line, equal-and-opposite impulse vectors ($\vec{J}$ and $-\vec{J}$), and colored Disjoint Set Union (DSU) contact island halos.
+- **Controls**:
+  - `Click & Drag / Touch`: Aim & shoot cue ball
+  - `UP / DOWN Arrows`: Adjust shot impulse (100 to 800)
+  - `B`: Toggle Baseline / Proposed algorithm
+  - `R`: Research overlay mode
+  - `P`: Play mode
+  - `SPACE`: Pause / resume physics
+  - `BACKSPACE`: Re-rack balls
+  - `Fullscreen Button`: Toggle true fullscreen arcade mode
 
 ---
 
-## 4. Local Preview Commands
-
-Before pushing, test the production build locally:
+## 4. Local Testing Before Push
 
 ```bash
 cd web
+npm install
 npm run build
 npm run preview
 ```
-Visit `http://localhost:4173` to verify the responsive design on desktop and mobile viewports.
+Visit `http://localhost:4173` to test the playable game locally before deploying.

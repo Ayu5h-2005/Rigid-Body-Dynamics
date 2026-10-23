@@ -53,22 +53,30 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick, downloadUrl, onOpen
 
             {/* Action Buttons */}
             <div className="flex flex-wrap items-center gap-4 pt-2">
+              <a
+                href="#game"
+                className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 shadow-lg shadow-emerald-500/25 transition-all text-sm group"
+              >
+                <span className="w-2.5 h-2.5 rounded-full bg-slate-950 animate-ping"></span>
+                <span>Play in Browser Now</span>
+              </a>
+
               {downloadUrl ? (
                 <a
                   href={downloadUrl}
                   download
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 shadow-lg shadow-emerald-500/25 transition-all text-sm group"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-slate-200 bg-slate-900 border border-slate-700/80 hover:bg-slate-800 hover:text-white transition-all text-sm group"
                 >
-                  <Download className="w-4 h-4 text-slate-950 group-hover:-translate-y-0.5 transition-transform" />
-                  <span>Download Windows Release (x64)</span>
+                  <Download className="w-4 h-4 text-emerald-400 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Download .exe (x64)</span>
                 </a>
               ) : (
                 <button
                   onClick={onDownloadClick}
-                  className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-semibold text-slate-950 bg-gradient-to-r from-emerald-400 to-teal-400 hover:from-emerald-300 hover:to-teal-300 shadow-lg shadow-emerald-500/25 transition-all text-sm group"
+                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-slate-200 bg-slate-900 border border-slate-700/80 hover:bg-slate-800 hover:text-white transition-all text-sm group"
                 >
-                  <Download className="w-4 h-4 text-slate-950 group-hover:-translate-y-0.5 transition-transform" />
-                  <span>Download Windows Release (x64)</span>
+                  <Download className="w-4 h-4 text-emerald-400 group-hover:-translate-y-0.5 transition-transform" />
+                  <span>Windows Release</span>
                 </button>
               )}
 
@@ -76,19 +84,11 @@ export const Hero: React.FC<HeroProps> = ({ onDownloadClick, downloadUrl, onOpen
                 href={repoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl font-medium text-slate-200 bg-slate-900/90 border border-slate-700/80 hover:bg-slate-800 hover:text-white transition-all text-sm"
+                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-medium text-slate-400 hover:text-white transition-colors text-sm"
               >
                 <GithubIcon className="w-4 h-4" />
-                <span>View Source Code</span>
+                <span>Source</span>
               </a>
-
-              <button
-                onClick={onOpenScreenshot}
-                className="inline-flex items-center gap-2 px-4 py-3.5 rounded-xl font-medium text-slate-400 hover:text-emerald-400 transition-colors text-sm"
-              >
-                <Eye className="w-4 h-4" />
-                <span>View Running App</span>
-              </button>
             </div>
 
             {/* Quick Specs Grid */}
